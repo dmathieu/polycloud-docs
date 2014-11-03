@@ -576,6 +576,13 @@ html, body {
 // These are the styles for phones and tablets
 // There are also a couple styles disperesed
 
+.tocify-wrapper {
+  h1 {
+    color: white;
+    margin: 2px;
+    text-align: center;
+  }
+}
 @media (max-width: $tablet-width) {
   .tocify-wrapper {
     left: -$nav-width;

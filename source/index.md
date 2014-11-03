@@ -75,6 +75,86 @@ Parameter | Description
 ID | The ID of the language to retrieve
 
 
+## Create a new language
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "language": {
+    "id": 3,
+    "title": "Java",
+    "snippets_ids": []
+  }
+}
+```
+
+This endpoint creates a new language.
+
+### HTTP Request
+
+`POST http://example.com/languages`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+TITLE | The title of the new language
+
+
+## Update an existing language
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "language": {
+    "id": 3,
+    "title": "Java",
+    "snippets_ids": [6, 8]
+  }
+}
+```
+
+This endpoint updates an existing language.
+
+### HTTP Request
+
+`PATCH/PUT http://example.com/languages/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+TITLE | new title of the language
+
+
+## Destroy a language
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "language": {
+    "id": 3,
+    "title": "Java",
+    "snippets_ids": []
+  }
+}
+```
+
+This endpoint destroys an existing language.
+
+### HTTP Request
+
+`DELETE http://example.com/languages/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the language to destroy
+
 # Snippets
 
 ## Get All Snippets
@@ -140,3 +220,88 @@ This endpoint retrieves a specific snippet.
 Parameter | Description
 --------- | -----------
 ID | The ID of the snippet to retrieve
+
+## Create a new snippet
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "snippet": {
+    "id": 1,
+    "user_id": 1,
+    "content": "Hello World",
+    "language_id": 1
+  }
+}
+```
+
+This endpoint creates a new snippet.
+
+### HTTP Request
+
+`POST http://example.com/snippets`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+CONTENT | The content of the new snippet.
+LANGUAGE_ID | The id of the language in which the snippet is written.
+
+
+## Update an existing snippet
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "snippet": {
+    "id": 1,
+    "user_id": 1,
+    "content": "Hello World",
+    "language_id": 1
+  }
+}
+```
+
+This endpoint updates an existing snippet.
+
+### HTTP Request
+
+`PATCH/PUT http://example.com/snippets/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+CONTENT | The new content of the snippet
+LANGUAGE_ID | The id of the language in which the snippet is written.
+
+
+## Destroy a snippet
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "snippet": {
+    "id": 1,
+    "user_id": 1,
+    "content": "Hello World",
+    "language_id": 1
+  }
+}
+```
+
+This endpoint destroys an existing snippet.
+
+### HTTP Request
+
+`DELETE http://example.com/snippets/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the snippet to destroy
