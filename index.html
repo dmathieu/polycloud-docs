@@ -26,7 +26,7 @@
       </span>
     </a>
     <div class="tocify-wrapper">
-      <img src="images/logo.png" />
+      <h1>Polycloud</h1>
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
         </div>
@@ -97,6 +97,90 @@
 <td>The ID of the language to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='create-a-new-language'>Create a new language</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Java"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snippets_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint creates a new language.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST http://example.com/languages</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TITLE</td>
+<td>The title of the new language</td>
+</tr>
+</tbody></table>
+<h2 id='update-an-existing-language'>Update an existing language</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Java"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snippets_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint updates an existing language.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PATCH/PUT http://example.com/languages/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TITLE</td>
+<td>new title of the language</td>
+</tr>
+</tbody></table>
+<h2 id='destroy-a-language'>Destroy a language</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Java"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snippets_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint destroys an existing language.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE http://example.com/languages/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the language to destroy</td>
+</tr>
+</tbody></table>
 <h1 id='snippets'>Snippets</h1><h2 id='get-all-snippets'>Get All Snippets</h2><pre class="highlight shell">curl <span class="s2">"http://example.com/snippets"</span> -H <span class="s2">"Accept: application/vnd.polycloud;ver=1+json"</span>
 </pre>
 
@@ -153,6 +237,101 @@
 <tr>
 <td>ID</td>
 <td>The ID of the snippet to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-new-snippet'>Create a new snippet</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint creates a new snippet.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST http://example.com/snippets</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CONTENT</td>
+<td>The content of the new snippet.</td>
+</tr>
+<tr>
+<td>LANGUAGE_ID</td>
+<td>The id of the language in which the snippet is written.</td>
+</tr>
+</tbody></table>
+<h2 id='update-an-existing-snippet'>Update an existing snippet</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint updates an existing snippet.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PATCH/PUT http://example.com/snippets/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CONTENT</td>
+<td>The new content of the snippet</td>
+</tr>
+<tr>
+<td>LANGUAGE_ID</td>
+<td>The id of the language in which the snippet is written.</td>
+</tr>
+</tbody></table>
+<h2 id='destroy-a-snippet'>Destroy a snippet</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint destroys an existing snippet.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE http://example.com/snippets/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the snippet to destroy</td>
 </tr>
 </tbody></table>
 
